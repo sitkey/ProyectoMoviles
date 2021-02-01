@@ -80,7 +80,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="22h-df-1d6"/>
+                    <navigationItem key="navigationItem" id="22h-df-1d6">
+                        <barButtonItem key="rightBarButtonItem" title="Iniciar Sesión" id="Hiy-ft-cGJ">
+                            <connections>
+                                <segue destination="tjL-3j-YvU" kind="show" id="5kd-yD-abr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="buscarTextField" destination="xO9-tA-JAk" id="88p-0v-2Dc"/>
                         <outlet property="imagenOficial" destination="kDM-Nf-cbH" id="Dkz-Y1-0JJ"/>
@@ -92,6 +98,73 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="956" y="103.44827586206897"/>
+        </scene>
+        <!--Sesion View Controller-->
+        <scene sceneID="Nme-SL-qwO">
+            <objects>
+                <viewController id="tjL-3j-YvU" customClass="SesionViewController" customModule="Proyecto" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ToS-ye-fWW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="agR-ye-ADg">
+                                <rect key="frame" x="16" y="104" width="343" height="182"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ltD-FY-6N8">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" textContentType="email"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="znm-9D-dvr">
+                                        <rect key="frame" x="0.0" y="74" width="343" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="iaq-I1-v80">
+                                        <rect key="frame" x="0.0" y="148" width="343" height="34"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CuR-CA-Wl8">
+                                                <rect key="frame" x="0.0" y="0.0" width="161.66666666666666" height="34"/>
+                                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                <state key="normal" title="Registrarse">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="registrase:" destination="tjL-3j-YvU" eventType="touchUpInside" id="oze-hD-HbZ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EG5-zd-LhG">
+                                                <rect key="frame" x="181.66666666666663" y="0.0" width="161.33333333333337" height="34"/>
+                                                <color key="backgroundColor" systemColor="linkColor"/>
+                                                <state key="normal" title="Acceder">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="acceder:" destination="tjL-3j-YvU" eventType="touchUpInside" id="0mG-rI-yVD"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8wa-P5-MVz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="agR-ye-ADg" firstAttribute="leading" secondItem="8wa-P5-MVz" secondAttribute="leading" constant="16" id="BpK-iX-ezK"/>
+                            <constraint firstItem="agR-ye-ADg" firstAttribute="top" secondItem="8wa-P5-MVz" secondAttribute="top" constant="16" id="YSy-oR-qr3"/>
+                            <constraint firstItem="8wa-P5-MVz" firstAttribute="trailing" secondItem="agR-ye-ADg" secondAttribute="trailing" constant="16" id="uao-Pp-vol"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Qnx-PB-KUH"/>
+                    <connections>
+                        <outlet property="email" destination="ltD-FY-6N8" id="Jjw-Gu-iaC"/>
+                        <outlet property="password" destination="znm-9D-dvr" id="3r5-L9-2YS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gGD-da-lPZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1906" y="-203"/>
         </scene>
         <!--Ver Poke View Controller-->
         <scene sceneID="Evd-4l-8ou">
@@ -214,7 +287,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JDz-xs-lHi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1816.8" y="102.70935960591133"/>
+            <point key="canvasLocation" x="1900" y="468"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="an4-rK-vBW">
@@ -243,6 +316,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
