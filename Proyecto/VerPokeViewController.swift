@@ -36,6 +36,7 @@ class VerPokeViewController: UIViewController {
     @IBOutlet weak var imagenTipo: UIImageView!
     @IBOutlet weak var numero: UILabel!
     var recibirNombre : String?
+    var pokeId: Int?
     @IBOutlet weak var nombrePoke: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +45,33 @@ class VerPokeViewController: UIViewController {
         pokemonManager.fetchPoke(nombrePoke: nombrePoke.text!)
     }
     
-
+    @IBAction func agregarPoke(_ sender: UIButton) {
+        if UserDefaults.standard.string(forKey: "Pokemon") == "" {
+            UserDefaults.standard.set(pokeId, forKey: "Pokemon")
+        } else {
+            if UserDefaults.standard.string(forKey: "Pokemon2") == "" {
+                UserDefaults.standard.set(pokeId, forKey: "Pokemon2")
+            } else {
+                if UserDefaults.standard.string(forKey: "Pokemon3") == "" {
+                    UserDefaults.standard.set(pokeId, forKey: "Pokemon3")
+                } else {
+                    if UserDefaults.standard.string(forKey: "Pokemon4") == "" {
+                        UserDefaults.standard.set(pokeId, forKey: "Pokemon4")
+                    } else {
+                        if UserDefaults.standard.string(forKey: "Pokemon5") == "" {
+                            UserDefaults.standard.set(pokeId, forKey: "Pokemon5")
+                        } else {
+                            if UserDefaults.standard.string(forKey: "Pokemon6") == "" {
+                                UserDefaults.standard.set(pokeId, forKey: "Pokemon6")
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+    
 }
 extension VerPokeViewController : PokemonManagerDelegate {
     func huboError(cualError: Error) {
@@ -70,6 +97,7 @@ extension VerPokeViewController : PokemonManagerDelegate {
                     complemento = "00"
                 }
             }
+            self.pokeId = poke.id
             self.numero.text = "N.º\(complemento)\(poke.id)"
             self.vida.text = "PS: \(poke.hp)"
             self.ataque.text = "Ataque: \(poke.attack)"

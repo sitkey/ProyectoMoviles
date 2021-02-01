@@ -32,14 +32,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var imagenOficial: UIImageView!
     @IBOutlet weak var nombrePokemon: UILabel!
     @IBOutlet weak var listaPokemon: UITableView!
-    init(email: String){
+    /*init(email: String){
         self.email = email
         super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
+    }*/
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "verPoke" {
